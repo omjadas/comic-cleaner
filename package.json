@@ -1,0 +1,26 @@
+{
+  "name": "comic-cleaner",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/omjadas/comic-cleaner.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/omjadas/comic-cleaner/issues"
+  },
+  "homepage": "https://github.com/omjadas/comic-cleaner#readme",
+  "devDependencies": {
+    "@types/node-7z": "^2.1.0",
+    "typescript": "^4.1.2"
+  },
+  "dependencies": {
+    "node-7z": "^2.1.2"
+  }
+}
