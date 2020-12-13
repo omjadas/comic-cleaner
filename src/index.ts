@@ -1,9 +1,13 @@
 #!/usr/bin/env node
 
 import { promises as fs } from "fs";
+import glob from "glob";
 import Seven from "node-7z";
 import path from "path";
+import util from "util";
 import yargs from "yargs";
+
+const globPromise = util.promisify(glob);
 
 yargs
     .command("$0 <files..>", "clean a comic file", yargs => {
@@ -19,24 +23,45 @@ yargs
                 },
             })
             .option("delete", {
+                type: "boolean",
+                alias: "d",
+                default: false,
+            })
+            .option("exclude", {
                 type: "string",
                 array: true,
-                alias: "d",
+                alias: "e",
+                default: [] as string[],
             });
     }, argv => {
         argv.files.forEach(file => {
+            const dir = file + ".tmp";
+
             const extractStream = Seven.extractFull(
                 file,
-                file + ".tmp",
+                dir,
                 {
                     recursive: true,
                 }
             );
 
             extractStream.on("end", async () => {
+                await Promise.all(argv.exclude.map(e => {
+                    return globPromise(e, {
+                        cwd: dir,
+                        root: dir,
+                        absolute: true,
+                    })
+                        .then(files => {
+                            return Promise.all(
+                                files.map(f => fs.unlink(f))
+                            );
+                        });
+                }));
+
                 const addStream = Seven.add(
                     file.split('.').slice(0, -1).join('.') + ".cbz",
-                    file + ".tmp/*",
+                    dir + "/*",
                     {
                         archiveType: "zip",
                         recursive: true,
@@ -46,7 +71,7 @@ yargs
                 addStream.on("end", async () => {
                     await Promise.all([
                         argv.delete ? fs.rm(file) : Promise.resolve(),
-                        fs.rm(file + ".tmp", {
+                        fs.rm(dir, {
                             recursive: true,
                             force: true,
                         }),
