@@ -35,7 +35,9 @@ yargs
             });
     }, argv => {
         argv.files.forEach(file => {
-            const dir = file + ".tmp";
+            const dir = file + ".tmp.d";
+            const newFile = file.split('.').slice(0, -1).join('.') + ".cbz";
+            const tmpFile = newFile + ".tmp";
 
             const extractStream = Seven.extractFull(
                 file,
@@ -59,8 +61,9 @@ yargs
                         });
                 }));
 
+
                 const addStream = Seven.add(
-                    file.split('.').slice(0, -1).join('.') + ".cbz",
+                    tmpFile,
                     dir + "/*",
                     {
                         archiveType: "zip",
@@ -68,13 +71,16 @@ yargs
                     }
                 );
 
-                addStream.on("end", async () => {
-                    await Promise.all([
-                        argv.delete ? fs.unlink(file) : Promise.resolve(),
-                        fs.rmdir(dir, {
-                            recursive: true,
-                        }),
-                    ]);
+                addStream.on("end", () => {
+                    if (argv.delete) {
+                        fs.unlink(file);
+                    }
+
+                    fs.rename(tmpFile, newFile);
+
+                    fs.rmdir(dir, {
+                        recursive: true,
+                    });
                 });
             });
         });
