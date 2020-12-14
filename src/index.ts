@@ -1,13 +1,21 @@
 #!/usr/bin/env node
 
 import { promises as fs } from "fs";
-import glob from "glob";
+import glob, { Glob, IGlob } from "glob";
 import Seven from "node-7z";
 import path from "path";
 import util from "util";
 import yargs from "yargs";
 
 const globPromise = util.promisify(glob);
+
+function myGlob(pattern: string, options: glob.IOptions, cb: (e: Error | null, v: [string[], IGlob]) => any) {
+    const match = new Glob(pattern, options, (err, matches) => {
+        cb(err, [matches, match]);
+    });
+}
+
+const myGlobPromise = util.promisify(myGlob);
 
 yargs
     .command("$0 <files..>", "clean a comic file", yargs => {
@@ -34,7 +42,7 @@ yargs
                 default: [] as string[],
             });
     }, argv => {
-        argv.files.forEach(file => {
+        for (const file of argv.files) {
             const dir = file + ".tmp";
 
             const extractStream = Seven.extractFull(
@@ -46,18 +54,27 @@ yargs
             );
 
             extractStream.on("end", async () => {
-                await Promise.all(argv.exclude.map(e => {
-                    return globPromise(e, {
+                if (argv.exclude.length) {
+                    let [prevFiles, prevMatch] = await myGlobPromise(argv.exclude[0], {
                         cwd: dir,
                         root: dir,
                         absolute: true,
-                    })
-                        .then(files => {
-                            return Promise.all(
-                                files.map(f => fs.unlink(f))
-                            );
+                    });
+
+                    prevFiles.forEach(f => fs.unlink(f));
+
+                    for (const e of argv.exclude.slice(1)) {
+                        [prevFiles, prevMatch] = await myGlobPromise(e, {
+                            cwd: dir,
+                            root: dir,
+                            absolute: true,
+                            cache: prevMatch.cache,
+                            statCache: prevMatch.statCache,
                         });
-                }));
+
+                        prevFiles.forEach(f => fs.unlink(f));
+                    }
+                }
 
                 const addStream = Seven.add(
                     file.split('.').slice(0, -1).join('.') + ".cbz",
@@ -78,7 +95,7 @@ yargs
                     ]);
                 });
             });
-        });
+        }
     })
     .completion()
     .argv;
