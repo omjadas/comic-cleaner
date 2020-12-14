@@ -2,9 +2,10 @@
   "name": "comic-cleaner",
   "version": "1.0.0",
   "description": "",
-  "main": "dist/index.js",
+  "bin": "dist/index.js",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "prepare": "npm run build"
   },
   "repository": {
     "type": "git",
