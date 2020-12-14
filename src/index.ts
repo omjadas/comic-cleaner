@@ -70,10 +70,9 @@ yargs
 
                 addStream.on("end", async () => {
                     await Promise.all([
-                        argv.delete ? fs.rm(file) : Promise.resolve(),
-                        fs.rm(dir, {
+                        argv.delete ? fs.unlink(file) : Promise.resolve(),
+                        fs.rmdir(dir, {
                             recursive: true,
-                            force: true,
                         }),
                     ]);
                 });
