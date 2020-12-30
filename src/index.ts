@@ -58,42 +58,48 @@ yargs
                 }
             );
 
+            extractStream.on("error", () => {
+                console.error(`\nFailed to open ${file}`);
+                singleBar.increment();
+            });
+
             extractStream.on("end", async () => {
-                await Promise.all(argv.exclude.map(e => {
-                    return globPromise(e, {
-                        cwd: dir,
-                        root: dir,
-                        absolute: true,
-                    })
-                        .then(files => {
-                            return Promise.all(
-                                files.map(f => fs.unlink(f))
-                            );
-                        });
-                }));
+                if (!extractStream.info.has("Can't open as archive")) {
+                    await Promise.all(argv.exclude.map(e => {
+                        return globPromise(e, {
+                            cwd: dir,
+                            root: dir,
+                            absolute: true,
+                        })
+                            .then(files => {
+                                return Promise.all(
+                                    files.map(f => fs.unlink(f))
+                                );
+                            });
+                    }));
 
-
-                const addStream = Seven.add(
-                    tmpFile,
-                    dir + "/*",
-                    {
-                        archiveType: "zip",
-                        recursive: true,
-                    }
-                );
-
-                addStream.on("end", () => {
-                    Promise.all([
-                        argv.delete ? fs.unlink(file) : Promise.resolve(),
-                        fs.rename(tmpFile, newFile),
-                        fs.rmdir(dir, {
+                    const addStream = Seven.add(
+                        tmpFile,
+                        dir + "/*",
+                        {
+                            archiveType: "zip",
                             recursive: true,
-                        }),
-                    ])
-                        .then(() => {
-                            singleBar.increment();
-                        });
-                });
+                        }
+                    );
+
+                    addStream.on("end", () => {
+                        Promise.all([
+                            argv.delete ? fs.unlink(file) : Promise.resolve(),
+                            fs.rename(tmpFile, newFile),
+                            fs.rmdir(dir, {
+                                recursive: true,
+                            }),
+                        ])
+                            .then(() => {
+                                singleBar.increment();
+                            });
+                    });
+                }
             });
         });
     })
