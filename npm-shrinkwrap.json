@@ -165,9 +165,9 @@
       "dev": true
     },
     "@types/node-7z": {
-      "version": "2.1.0",
-      "resolved": "https://registry.npmjs.org/@types/node-7z/-/node-7z-2.1.0.tgz",
-      "integrity": "sha512-x3enaHLv5fRIWiA60dc43indT+j4a5Rg8Zlu+Xr0r8iKJIfnMza5Gh/FDcqCJAcrrF/up4zCvLIAa9dpCvXjlw==",
+      "version": "2.1.1",
+      "resolved": "https://registry.npmjs.org/@types/node-7z/-/node-7z-2.1.1.tgz",
+      "integrity": "sha512-uJmfAt77x7eRS6dZEbxpazgYbDBLV4Yz14I6gX9ENcRn/cBXVVYe8Madn2llcg1nZrN+2E51tfbwVnBUtLVYeQ==",
       "dev": true,
       "requires": {
         "@types/node": "*"
