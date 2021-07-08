@@ -179,9 +179,9 @@
       "dev": true
     },
     "@types/node-7z": {
-      "version": "2.1.1",
-      "resolved": "https://registry.npmjs.org/@types/node-7z/-/node-7z-2.1.1.tgz",
-      "integrity": "sha512-uJmfAt77x7eRS6dZEbxpazgYbDBLV4Yz14I6gX9ENcRn/cBXVVYe8Madn2llcg1nZrN+2E51tfbwVnBUtLVYeQ==",
+      "version": "2.1.2",
+      "resolved": "https://registry.npmjs.org/@types/node-7z/-/node-7z-2.1.2.tgz",
+      "integrity": "sha512-yjGJopMNc5bLWDYLSPOxp4unW47l/m3cG6yznGIbH5GWMfLJkPSPZW68e9crJLYhsaDUqmMTVYI4Ix1whIJ+Tg==",
       "dev": true,
       "requires": {
         "@types/node": "*"
