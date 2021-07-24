@@ -91,8 +91,9 @@ yargs
                         Promise.all([
                             argv.delete ? fs.unlink(file) : Promise.resolve(),
                             fs.rename(tmpFile, newFile),
-                            fs.rmdir(dir, {
+                            fs.rm(dir, {
                                 recursive: true,
+                                force: true,
                             }),
                         ])
                             .then(() => {
