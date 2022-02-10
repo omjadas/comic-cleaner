@@ -20,7 +20,7 @@
   "devDependencies": {
     "@types/cli-progress": "^3.9.2",
     "@types/glob": "^7.2.0",
-    "@types/node": "^16.11.22",
+    "@types/node": "^16.11.24",
     "@types/node-7z": "^2.1.4",
     "@types/yargs": "^17.0.8",
     "@typescript-eslint/eslint-plugin": "^5.11.0",
