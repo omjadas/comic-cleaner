@@ -23,7 +23,7 @@
         "@types/glob": "^7.2.0",
         "@types/node": "^16.11.26",
         "@types/node-7z": "^2.1.4",
-        "@types/yargs": "^17.0.9",
+        "@types/yargs": "^17.0.10",
         "@typescript-eslint/eslint-plugin": "^5.15.0",
         "@typescript-eslint/parser": "^5.15.0",
         "eslint": "^8.11.0",
@@ -152,9 +152,9 @@
       }
     },
     "node_modules/@types/yargs": {
-      "version": "17.0.9",
-      "resolved": "https://registry.npmjs.org/@types/yargs/-/yargs-17.0.9.tgz",
-      "integrity": "sha512-Ci8+4/DOtkHRylcisKmVMtmVO5g7weUVCKcsu1sJvF1bn0wExTmbHmhFKj7AnEm0de800iovGhdSKzYnzbaHpg==",
+      "version": "17.0.10",
+      "resolved": "https://registry.npmjs.org/@types/yargs/-/yargs-17.0.10.tgz",
+      "integrity": "sha512-gmEaFwpj/7f/ROdtIlci1R1VYU1J4j95m8T+Tj3iBgiBFKg1foE/PSl93bBd5T9LDXNPo8UlNN6W0qwD8O5OaA==",
       "dev": true,
       "dependencies": {
         "@types/yargs-parser": "*"
@@ -1887,9 +1887,9 @@
       }
     },
     "@types/yargs": {
-      "version": "17.0.9",
-      "resolved": "https://registry.npmjs.org/@types/yargs/-/yargs-17.0.9.tgz",
-      "integrity": "sha512-Ci8+4/DOtkHRylcisKmVMtmVO5g7weUVCKcsu1sJvF1bn0wExTmbHmhFKj7AnEm0de800iovGhdSKzYnzbaHpg==",
+      "version": "17.0.10",
+      "resolved": "https://registry.npmjs.org/@types/yargs/-/yargs-17.0.10.tgz",
+      "integrity": "sha512-gmEaFwpj/7f/ROdtIlci1R1VYU1J4j95m8T+Tj3iBgiBFKg1foE/PSl93bBd5T9LDXNPo8UlNN6W0qwD8O5OaA==",
       "dev": true,
       "requires": {
         "@types/yargs-parser": "*"
