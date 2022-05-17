@@ -29,7 +29,7 @@
     "typescript": "^4.6.4"
   },
   "dependencies": {
-    "cli-progress": "^3.11.0",
+    "cli-progress": "^3.11.1",
     "glob": "^8.0.3",
     "node-7z": "^3.0.0",
     "restore-cursor": "^3.1.0",
