@@ -22,7 +22,7 @@
     "@types/glob": "^8.0.0",
     "@types/node": "^18.11.11",
     "@types/node-7z": "^2.1.4",
-    "@types/yargs": "^17.0.16",
+    "@types/yargs": "^17.0.17",
     "@typescript-eslint/eslint-plugin": "^5.45.1",
     "@typescript-eslint/parser": "^5.45.1",
     "eslint": "^8.29.0",
