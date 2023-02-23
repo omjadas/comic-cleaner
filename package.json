@@ -19,7 +19,7 @@
   "homepage": "https://github.com/omjadas/comic-cleaner#readme",
   "devDependencies": {
     "@types/cli-progress": "^3.11.0",
-    "@types/glob": "^8.0.1",
+    "@types/glob": "^8.1.0",
     "@types/node": "^18.14.0",
     "@types/node-7z": "^2.1.4",
     "@types/yargs": "^17.0.22",
