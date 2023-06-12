@@ -2,14 +2,11 @@
 
 import { SingleBar } from "cli-progress";
 import { promises as fs } from "fs";
-import glob from "glob";
+import { glob } from "glob";
 import Seven from "node-7z";
 import path from "path";
 import restoreCursor from "restore-cursor";
-import util from "util";
 import yargs from "yargs";
-
-const globPromise = util.promisify(glob);
 
 yargs
     .command("$0 <files..>", "clean a comic file", yargs => {
@@ -65,17 +62,16 @@ yargs
 
             extractStream.on("end", async () => {
                 if (!extractStream.info.has("Can't open as archive")) {
-                    await Promise.all(argv.exclude.map(e => {
-                        return globPromise(e, {
+                    await Promise.all(argv.exclude.map(async e => {
+                        const files = await glob(e, {
                             cwd: dir,
                             root: dir,
                             absolute: true,
                         })
-                            .then(files => {
-                                return Promise.all(
-                                    files.map(f => fs.unlink(f))
-                                );
-                            });
+
+                        return Promise.all(
+                            files.map(f => fs.unlink(f))
+                        );
                     }));
 
                     const addStream = Seven.add(
@@ -87,8 +83,8 @@ yargs
                         }
                     );
 
-                    addStream.on("end", () => {
-                        Promise.all([
+                    addStream.on("end", async () => {
+                        await Promise.all([
                             argv.delete ? fs.unlink(file) : Promise.resolve(),
                             fs.rename(tmpFile, newFile),
                             fs.rm(dir, {
@@ -96,9 +92,8 @@ yargs
                                 force: true,
                             }),
                         ])
-                            .then(() => {
-                                singleBar.increment();
-                            });
+
+                        singleBar.increment();
                     });
                 }
             });
