@@ -19,7 +19,7 @@
         "comic-cleaner": "dist/index.js"
       },
       "devDependencies": {
-        "@types/cli-progress": "^3.11.1",
+        "@types/cli-progress": "^3.11.2",
         "@types/glob": "^8.1.0",
         "@types/node": "^20.5.9",
         "@types/node-7z": "^2.1.5",
@@ -262,9 +262,9 @@
       }
     },
     "node_modules/@types/cli-progress": {
-      "version": "3.11.1",
-      "resolved": "https://registry.npmjs.org/@types/cli-progress/-/cli-progress-3.11.1.tgz",
-      "integrity": "sha512-d9iA+0uys9N6wV/SvZkDEWMYwv+e/mhWPLa6lncQ1ZqrC3mXHnDmidanVGoVGnmCQ3mCxyu9S09Y2s18u5wL5w==",
+      "version": "3.11.2",
+      "resolved": "https://registry.npmjs.org/@types/cli-progress/-/cli-progress-3.11.2.tgz",
+      "integrity": "sha512-Yt/8rEJalfa9ve2SbfQnwFHrc9QF52JIZYHW3FDaTMpkCvnns26ueKiPHDxyJ0CS//IqjMINTx7R5Xa7k7uFHQ==",
       "dev": true,
       "dependencies": {
         "@types/node": "*"
@@ -2227,9 +2227,9 @@
       "optional": true
     },
     "@types/cli-progress": {
-      "version": "3.11.1",
-      "resolved": "https://registry.npmjs.org/@types/cli-progress/-/cli-progress-3.11.1.tgz",
-      "integrity": "sha512-d9iA+0uys9N6wV/SvZkDEWMYwv+e/mhWPLa6lncQ1ZqrC3mXHnDmidanVGoVGnmCQ3mCxyu9S09Y2s18u5wL5w==",
+      "version": "3.11.2",
+      "resolved": "https://registry.npmjs.org/@types/cli-progress/-/cli-progress-3.11.2.tgz",
+      "integrity": "sha512-Yt/8rEJalfa9ve2SbfQnwFHrc9QF52JIZYHW3FDaTMpkCvnns26ueKiPHDxyJ0CS//IqjMINTx7R5Xa7k7uFHQ==",
       "dev": true,
       "requires": {
         "@types/node": "*"
