@@ -6,10 +6,19 @@ updates:
       interval: daily
       time: "07:00"
       timezone: Australia/Sydney
-    open-pull-requests-limit: 99
+    open-pull-requests-limit: 10
     reviewers:
       - omjadas
     groups:
       typescript-eslint:
         patterns:
           - "@typescript-eslint/*"
+  - package-ecosystem: github-actions
+    directory: "/"
+    schedule:
+      interval: daily
+      time: "07:00"
+      timezone: Australia/Sydney
+    open-pull-requests-limit: 10
+    reviewers:
+      - omjadas
