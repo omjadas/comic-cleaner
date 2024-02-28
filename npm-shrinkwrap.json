@@ -21,7 +21,7 @@
       "devDependencies": {
         "@types/cli-progress": "^3.11.5",
         "@types/glob": "^8.1.0",
-        "@types/node": "^20.11.20",
+        "@types/node": "^20.11.22",
         "@types/node-7z": "^2.1.8",
         "@types/yargs": "^17.0.32",
         "@typescript-eslint/eslint-plugin": "^7.1.0",
@@ -293,9 +293,9 @@
       "dev": true
     },
     "node_modules/@types/node": {
-      "version": "20.11.20",
-      "resolved": "https://registry.npmjs.org/@types/node/-/node-20.11.20.tgz",
-      "integrity": "sha512-7/rR21OS+fq8IyHTgtLkDK949uzsa6n8BkziAKtPVpugIkO6D+/ooXMvzXxDnZrmtXVfjb1bKQafYpb8s89LOg==",
+      "version": "20.11.22",
+      "resolved": "https://registry.npmjs.org/@types/node/-/node-20.11.22.tgz",
+      "integrity": "sha512-/G+IxWxma6V3E+pqK1tSl2Fo1kl41pK1yeCyDsgkF9WlVAme4j5ISYM2zR11bgLFJGLN5sVK40T4RJNuiZbEjA==",
       "dev": true,
       "dependencies": {
         "undici-types": "~5.26.4"
@@ -2299,9 +2299,9 @@
       "dev": true
     },
     "@types/node": {
-      "version": "20.11.20",
-      "resolved": "https://registry.npmjs.org/@types/node/-/node-20.11.20.tgz",
-      "integrity": "sha512-7/rR21OS+fq8IyHTgtLkDK949uzsa6n8BkziAKtPVpugIkO6D+/ooXMvzXxDnZrmtXVfjb1bKQafYpb8s89LOg==",
+      "version": "20.11.22",
+      "resolved": "https://registry.npmjs.org/@types/node/-/node-20.11.22.tgz",
+      "integrity": "sha512-/G+IxWxma6V3E+pqK1tSl2Fo1kl41pK1yeCyDsgkF9WlVAme4j5ISYM2zR11bgLFJGLN5sVK40T4RJNuiZbEjA==",
       "dev": true,
       "requires": {
         "undici-types": "~5.26.4"
