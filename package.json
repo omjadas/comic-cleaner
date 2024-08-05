@@ -23,8 +23,8 @@
     "@types/node": "^22.1.0",
     "@types/node-7z": "^2.1.8",
     "@types/yargs": "^17.0.32",
-    "@typescript-eslint/eslint-plugin": "^8.0.0",
-    "@typescript-eslint/parser": "^8.0.0",
+    "@typescript-eslint/eslint-plugin": "^8.0.1",
+    "@typescript-eslint/parser": "^8.0.1",
     "eslint": "^9.8.0",
     "typescript": "^5.5.4"
   },
