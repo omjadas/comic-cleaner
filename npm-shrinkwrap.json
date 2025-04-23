@@ -10,7 +10,7 @@
       "license": "MIT",
       "dependencies": {
         "cli-progress": "^3.12.0",
-        "glob": "^11.0.1",
+        "glob": "^11.0.2",
         "node-7z": "^3.0.0",
         "restore-cursor": "^5.1.0",
         "yargs": "^17.7.2"
@@ -1203,9 +1203,10 @@
       }
     },
     "node_modules/glob": {
-      "version": "11.0.1",
-      "resolved": "https://registry.npmjs.org/glob/-/glob-11.0.1.tgz",
-      "integrity": "sha512-zrQDm8XPnYEKawJScsnM0QzobJxlT/kHOOlRTio8IH/GrmxRE5fjllkzdaHclIuNjUQTJYH2xHNIGfdpJkDJUw==",
+      "version": "11.0.2",
+      "resolved": "https://registry.npmjs.org/glob/-/glob-11.0.2.tgz",
+      "integrity": "sha512-YT7U7Vye+t5fZ/QMkBFrTJ7ZQxInIUjwyAjVj84CYXqgBdv30MFUPGnBR6sQaVq6Is15wYJUsnzTuWaGRBhBAQ==",
+      "license": "ISC",
       "dependencies": {
         "foreground-child": "^3.1.0",
         "jackspeak": "^4.0.1",
@@ -2892,9 +2893,9 @@
       "integrity": "sha512-DyFP3BM/3YHTQOCUL/w0OZHR0lpKeGrxotcHWcqNEdnltqFwXVfhEBQ94eIo34AfQpo0rGki4cyIiftY06h2Fg=="
     },
     "glob": {
-      "version": "11.0.1",
-      "resolved": "https://registry.npmjs.org/glob/-/glob-11.0.1.tgz",
-      "integrity": "sha512-zrQDm8XPnYEKawJScsnM0QzobJxlT/kHOOlRTio8IH/GrmxRE5fjllkzdaHclIuNjUQTJYH2xHNIGfdpJkDJUw==",
+      "version": "11.0.2",
+      "resolved": "https://registry.npmjs.org/glob/-/glob-11.0.2.tgz",
+      "integrity": "sha512-YT7U7Vye+t5fZ/QMkBFrTJ7ZQxInIUjwyAjVj84CYXqgBdv30MFUPGnBR6sQaVq6Is15wYJUsnzTuWaGRBhBAQ==",
       "requires": {
         "foreground-child": "^3.1.0",
         "jackspeak": "^4.0.1",
