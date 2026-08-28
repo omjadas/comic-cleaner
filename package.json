@@ -30,7 +30,7 @@
   },
   "dependencies": {
     "cli-progress": "^3.12.0",
-    "glob": "^11.0.3",
+    "glob": "^13.0.6",
     "node-7z": "^3.0.0",
     "restore-cursor": "^5.1.0",
     "yargs": "^17.7.2"
